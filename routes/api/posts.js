@@ -1,20 +1,24 @@
 const express = require('express');
 const router = express.Router();
 
-require('dotenv').config();
-
+//api client and cms authr
+//GET ALL POSTS
 router.get('/', (req, res) => {
   res.send('GET ALL POSTS');
 });
 
+//GET SINGLE POST BASED ON ID
+router.get('/:postId', (req, res) => {
+  res.send(`GET POST BASED ON ID ${req.params.postId}`);
+});
+
+//Used by cms author
+//MAKE NEW POST
 router.post('/', (req, res) => {
   res.send('MAKE NEW POST');
 });
 
-router.get('/:postId', (req, res) => {
-  res.send(`GET POST BASED ON ID`);
-});
-
+//DELETE POST BASED ON ID
 router.delete('/:postId', (req, res) => {
   res.send(`DELETE POST BASED ON ID`);
 });

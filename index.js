@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+require('dotenv').config();
 
 //Mongoose connection
 const mongoose = require('mongoose');
@@ -11,7 +12,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Middleware
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 
 //Router
 app.use('/api', require('./routes/api'));
