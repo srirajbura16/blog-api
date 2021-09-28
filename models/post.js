@@ -14,8 +14,9 @@ const PostSchema = new Schema(
   {
     title: { type: String, required: true },
     content: { type: String, required: true },
+    author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     comments: [commentSchema],
-    published: { type: Boolean, required: true },
+    published: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
