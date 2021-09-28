@@ -7,6 +7,12 @@ router.get('/', (req, res) => {
   res.send('GET ALL POSTS');
 });
 
+// https://www.youtube.com/watch?v=fgTGADljAeg
+//reread the odin article
+
+//success messages
+//error messages
+
 //GET SINGLE POST BASED ON ID
 router.get('/:postId', (req, res) => {
   res.send(`GET POST BASED ON ID ${req.params.postId}`);
