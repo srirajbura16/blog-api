@@ -1,21 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../../models/user');
+const userController = require('../../controllers/userController');
 
-router.get('/', (req, res) => {
-  User.find({}).exec((err, users) => {
-    if (err) return next(err);
-    res.json(users);
-  });
-});
+router.get('/', userController.get_users);
 
-router.get('/:userId', (req, res) => {
-  const { userId } = req.params;
-  User.findById(userId).exec((err, user) => {
-    if (err) return next(err);
-    res.json(user);
-  });
-});
+router.get('/:userId', userController.get_userById);
 
 module.exports = router;

@@ -5,8 +5,5 @@ GET http://localhost:3000/api/users
 
 
 ###
-# 615354bec29d5e3e8fb72616
-# 615354bfc29d5e3e8fb72619
-
 # GET User BASED ON ID
-GET http://localhost:3000/api/users/615354bec29d5e3e8fb72616
+GET http://localhost:3000/api/users/:userId

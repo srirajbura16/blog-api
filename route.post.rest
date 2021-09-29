@@ -2,11 +2,7 @@
 GET http://localhost:3000/api/posts
 
 ###
-# 615354bfc29d5e3e8fb72621
-# 615354bfc29d5e3e8fb72622
-# 615354bfc29d5e3e8fb72623
-# 615354bfc29d5e3e8fb72624
-# 615354bfc29d5e3e8fb72625
+
 
 # GET POST BASED ON ID
-GET http://localhost:3000/api/posts/615354bfc29d5e3e8fb72621
+GET http://localhost:3000/api/posts/:postId
