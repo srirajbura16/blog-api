@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-//api client and cms authr
+const Post = require('../../models/post');
+
 //GET ALL POSTS
-router.get('/', (req, res) => {
-  res.send('GET ALL POSTS');
+router.get('/', (req, res, next) => {
+  Post.find({}).exec((err, posts) => {
+    if (err) return next(err);
+    res.json(posts);
+  });
 });
 
 // https://www.youtube.com/watch?v=fgTGADljAeg
@@ -14,8 +18,12 @@ router.get('/', (req, res) => {
 //error messages
 
 //GET SINGLE POST BASED ON ID
-router.get('/:postId', (req, res) => {
-  res.send(`GET POST BASED ON ID ${req.params.postId}`);
+router.get('/:postId', (req, res, next) => {
+  const { postId } = req.params;
+  Post.findById(postId).exec((err, post) => {
+    if (err) return next(err);
+    res.json(post);
+  });
 });
 
 //Used by cms author
