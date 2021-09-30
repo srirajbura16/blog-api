@@ -7,3 +7,13 @@ GET http://localhost:3000/api/users
 ###
 # GET User BASED ON ID
 GET http://localhost:3000/api/users/:userId
+
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+
+{
+  "username": "New User",
+  "password": "New user password test"
+}
