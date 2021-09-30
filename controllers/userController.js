@@ -27,6 +27,7 @@ exports.get_userById = async (req, res, next) => {
 
 // POST /
 exports.create_user = async (req, res, next) => {
+  //hashpassword - bcrypt
   const { username, password } = req.body;
   const user = new User({
     username,
