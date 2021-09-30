@@ -10,9 +10,7 @@ router.get('/', postController.get_posts);
 router.get('/:postId', postController.get_postById);
 
 //MAKE NEW POST
-router.post('/', (req, res) => {
-  res.send('MAKE NEW POST');
-});
+router.post('/', postController.create_post);
 
 //DELETE POST BASED ON ID
 router.delete('/:postId', (req, res) => {

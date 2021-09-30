@@ -18,6 +18,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api', require('./routes/api'));
 app.use('/auth', require('./routes/auth'));
 
+app.use(express.json());
+
 //
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

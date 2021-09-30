@@ -1,8 +1,19 @@
 # GET POSTS
 GET http://localhost:3000/api/posts
 
+
 ###
-
-
 # GET POST BASED ON ID
 GET http://localhost:3000/api/posts/:postId
+
+
+###
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+
+{
+  "title": "New Post",
+  "content": "New post content test"
+}
+
