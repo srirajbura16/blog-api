@@ -2,13 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 require('dotenv').config();
+require('./config/db');
 
-//Mongoose connection
-const mongoose = require('mongoose');
-const mongoDB = process.env.DB_HOST;
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// //Mongoose connection
+// const mongoose = require('mongoose');
+// const mongoDB = process.env.DB_HOST;
+// mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Middleware
 app.use(express.json());
