@@ -27,6 +27,7 @@ exports.get_userById = async (req, res, next) => {
 
 // POST /
 exports.create_user = async (req, res, next) => {
+  //signup-validators - also check if user name is taken
   //hashpassword - bcrypt
   const { username, password } = req.body;
   const user = new User({

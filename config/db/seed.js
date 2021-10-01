@@ -14,8 +14,8 @@ if (!userArgs[0].startsWith('mongodb')) {
 */
 var async = require('async');
 
-var Post = require('./models/post');
-var User = require('./models/user');
+var Post = require('../../models/post');
+var User = require('../../models/user');
 
 var mongoose = require('mongoose');
 var mongoDB = userArgs[0];
