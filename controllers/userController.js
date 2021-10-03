@@ -37,7 +37,7 @@ exports.create_user = [
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      res.json({ errors: errors.array() });
+      res.json({ errors: errors.array()[0] });
       return;
     }
     const { username, password } = req.body;
