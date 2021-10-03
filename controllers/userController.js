@@ -31,7 +31,7 @@ exports.get_userById = async (req, res, next) => {
 // POST /
 exports.create_user = [
   signup_validators,
-  async (req, res, next) => {
+  (req, res, next) => {
     //signup-validators - also check if user name is taken
     //hashpassword - bcrypt
     const errors = validationResult(req);
@@ -40,16 +40,22 @@ exports.create_user = [
       res.json({ errors: errors.array()[0] });
       return;
     }
+
     const { username, password } = req.body;
-    const user = new User({
-      username,
-      password,
+    bcrypt.hash(password, 10, async (err, hashedPassword) => {
+      if (err) {
+        return next(err);
+      }
+      const user = new User({
+        username,
+        password: hashedPassword,
+      });
+      try {
+        const newUser = await user.save();
+        res.status(201).json(newUser);
+      } catch (err) {
+        res.status(400).json({ message: err.message });
+      }
     });
-    try {
-      const newUser = await user.save();
-      res.status(201).json(newUser);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
-    }
   },
 ];

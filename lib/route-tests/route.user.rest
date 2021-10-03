@@ -12,9 +12,8 @@ GET http://localhost:3000/api/users/:userId
 POST http://localhost:3000/api/users
 Content-Type: application/json
 
-
 {
-  "username": "Jims",
-  "password": "22",
-  "confirm-password": "22"
+  "username": "NewUser",
+  "password": "pass",
+  "confirm-password": "pass"
 }
