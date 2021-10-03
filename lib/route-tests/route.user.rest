@@ -15,5 +15,6 @@ Content-Type: application/json
 
 {
   "username": "New User",
-  "password": "New user password test"
+  "password": "password1",
+  "confirm-password": "password1"
 }
